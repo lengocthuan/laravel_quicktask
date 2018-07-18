@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>{!! Form::label('title', trans('message.title')) !!}</title>
+
+        <title>{!! Form::label(trans('message.title')) !!}</title>
 
         <!-- CSS And JavaScript -->
         <!-- Latest compiled and minified CSS -->
@@ -14,7 +15,6 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 
     </head>
 
