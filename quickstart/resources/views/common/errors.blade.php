@@ -1,6 +1,6 @@
 <!-- resources/views/common/errors.blade.php -->
 
-@if (count($errors) > 0)
+@if (count($errors))
     <!-- Form Error List -->
     <div class="alert alert-danger">
         <strong>{!! Form::label(trans('message.error')) !!}</strong>
