@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Task;
 use Validator;
-use Illuminate\Http\Request;
+use App\Http\Requests\RequestTasks;
 use Resources\lang\vi;
 use Resources\lang\en;
 
@@ -45,19 +45,9 @@ class quicktask extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RequestTasks $request)
     {
-        //
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|max:255',
-        ]);
-
-        if ($validator->fails()) {
-            return redirect('/')
-                ->withInput()
-                ->withErrors($validator);
-        }
-
+        
         // Create The Task...
         $task = new Task;
         $task->name = $request->name;

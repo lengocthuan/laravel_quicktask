@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Laravel Quickstart - Basic</title>
+
+        <title>{!! Form::label(trans('message.title')) !!}</title>
 
         <!-- CSS And JavaScript -->
         <!-- Latest compiled and minified CSS -->
@@ -22,15 +23,11 @@
 
         <div class="container">
             <nav class="navbar navbar-default">
-                <!-- Navbar Contents -->
-                <center><h1><p class="text-muted">Task List</p></h1></center>
+                <!-- Navbar Contents -->                
+                <center><h1>{!! Form::label('litk', trans('message.ltask'), ['class' => 'text-muted']) !!}</p></h1></center>
             </nav>
         </div>
-
-        
-
         @yield('content')
-        
-        
+
     </body>
 </html>
