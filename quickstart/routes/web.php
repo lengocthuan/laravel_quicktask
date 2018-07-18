@@ -11,6 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+/**
+ * Show Task Dashboard
+ */
+Route::get('/', 'quicktask@create');
+
+/**
+ * Add New Task
+ */
+Route::post('/task', 'quicktask@store');
+
+/**
+ * Delete Task
+ */
+Route::delete('/task/{task}', 'quicktask@destroy');
+
+
