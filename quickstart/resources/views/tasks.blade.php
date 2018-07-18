@@ -5,40 +5,38 @@
 @section('content')
 
     <!-- Bootstrap Boilerplate... -->
-
+    
     <div class="panel-body">
         <!-- Display Validation Errors -->
         @include('common.errors')
 
         <!-- New Task Form -->
-        <form action="{{ url('task') }}" method="POST" class="form-horizontal">
-            {{ csrf_field() }}
+        {!! Form::open(['url' => 'task', 'method' => 'post', 'class' => 'form-horizontal']) !!}
 
             <!-- Task Name -->
             <div class="form-group">
-                <label for="task" class="col-sm-3 control-label">Task</label>
-
+                {!! Form::label('task', trans('message.task'), ['class' => 'col-sm-3 control-label']) !!}
+                
                 <div class="col-sm-6">
-                    <input type="text" name="name" id="task-name" class="form-control">
+                    {!! Form::text('name', $value = null, ['id' => 'task-name', 'class' => 'form-control']) !!}                                        
                 </div>
             </div>
 
-            <!-- Add Task Button -->
+           <!--  Add Task Button -->
             <div class="form-group">
-                <div class="col-sm-offset-3 col-sm-6">
-                    <button type="submit" class="btn btn-default">
-                        <i class="fa fa-plus"></i> Add Task
-                    </button>
-                </div>
+                <div class="col-sm-offset-3 col-sm-6">                    
+                    {!! Form::submit(trans('message.add_task'), ['class' => 'btn btn-default']) !!}
             </div>
-        </form>
+             
+        {!! Form::close() !!}
     </div>
 
     <!-- TODO: Current Tasks -->
     @if (count($tasks) > 0)
         <div class="panel panel-default">
-            <div class="panel-heading">
-                Current Tasks
+
+            <div>
+                {!! Form::label('c_task', trans('message.current_task'), ['class' => 'panel-heading']) !!}
             </div>
 
             <div class="panel-body">
@@ -46,7 +44,7 @@
 
                     <!-- Table Headings -->
                     <thead>
-                        <th>Task</th>
+                        <th>{{ trans('message.task') }}</th>
                         <th>&nbsp;</th>
                     </thead>
 
@@ -60,20 +58,10 @@
                                 </td>
 
                                 <td>
-                                    <!-- TODO: Delete Button -->
-                                    <!-- <form method="POST" action="{{ url('task/'.$task->id) }}">
-                                                {{ csrf_field() }}
-                                                {{ method_field('DELETE') }}
-                                    
-
-                                                <button type="submit" class="btn btn-danger">
-                                                    <i class="fa fa-trash"></i> Delete
-                                                </button>
-                                    </form>                --> 
-
+                                    <!-- TODO: Delete Button -->                                    
                                     {!! Form::open(['url' => ('task/'.$task->id), 'method' => 'delete']) !!}
                                    
-                                    {!! Form::submit(' Delete', ['class' => 'btn btn-danger']) !!}    
+                                    {!! Form::submit(trans('message.delete'), ['class' => 'btn btn-danger']) !!}    
                                                                                     
                                     {!! Form::close() !!}                
                                 </td>
@@ -86,5 +74,4 @@
     @endif
 
 @endsection
-
 

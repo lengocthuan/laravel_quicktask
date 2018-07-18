@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Laravel Quickstart - Basic</title>
+
+        <title>{!! Form::label(trans('message.title')) !!}</title>
 
         <!-- CSS And JavaScript -->
         <!-- Latest compiled and minified CSS -->
@@ -14,19 +15,19 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
     </head>
 
     <body>
 
         <div class="container">
             <nav class="navbar navbar-default">
-                <!-- Navbar Contents -->
-
+                <!-- Navbar Contents -->                
+                <center><h1>{!! Form::label('litk', trans('message.ltask'), ['class' => 'text-muted']) !!}</p></h1></center>
             </nav>
         </div>
-
         @yield('content')
-        
-        
+
     </body>
 </html>

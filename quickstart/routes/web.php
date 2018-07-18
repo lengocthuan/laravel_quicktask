@@ -11,11 +11,6 @@
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
-
-
 
 /**
  * Show Task Dashboard
@@ -32,4 +27,4 @@ Route::post('/task', 'quicktask@store');
  */
 Route::delete('/task/{task}', 'quicktask@destroy');
 
-/*Route::get('/home','quicktask@index');*/
+
