@@ -5,6 +5,7 @@ return [
     'title' => 'Laravel QuickTask - Cơ bản',
     'enter_name' => 'nhập tên công việc',
     'task' => 'Nhiệm vụ',
+    'ltask' => 'Danh sách nhiệm vụ',
     'add_task' => 'Thêm nhiệm vụ',
     'current_task' => 'Nhiệm vụ hiện tại',
     'delete' => 'Xóa bỏ',

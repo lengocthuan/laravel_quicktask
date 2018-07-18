@@ -5,6 +5,7 @@ return [
     'title' => 'Laravel QuickTask - Basic',
     'enter_name' => 'enter task name',
     'task' => 'Task',
+    'ltask' => 'Task List',
     'add_task' => 'Add Task',
     'current_task' => 'Current Task',
     'delete' => 'Delete',
